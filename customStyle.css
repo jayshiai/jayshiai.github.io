@@ -5,6 +5,7 @@ html {
 html::-webkit-scrollbar {
   display: none; /* Safari and Chrome */
 }
+
 .cursor-link-hover {
   width: 25px;
   height: 25px;

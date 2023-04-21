@@ -7,7 +7,9 @@ const work = document.getElementById("work");
 const asthetic = document.getElementById("asthetic");
 const contact = document.getElementById("contact");
 const expertise = document.getElementById("expertise");
-const wrapper = document.getElementById("wrapper");
+const cypherWrapper = document.getElementById("wrapper");
+const wrapper = document.getElementById("carasoul-wrapper");
+const cat_carasoul = document.getElementById("cat_carasoul");
 const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 const scrollTextAnimate = () => {
@@ -56,67 +58,73 @@ const opacitor = (element, bool) => {
     cursorInner.style.height = null;
   }
 };
-window.onmousemove = (e) => {
-  let cursorX = e.clientX,
-    cursorY = e.clientY;
 
-  if (locator(e, expertise)) {
-    cursorInner.style.width = "200px";
-    cursorInner.style.height = "200px";
-  } else if (locator(e, nameHero)) {
-    cursorInner.style.width = "200px";
-    cursorInner.style.height = "200px";
-  } else {
-    if (locator(e, work)) {
-      opacitor(work, true);
+const mouse_trail = () =>
+  (window.onmousemove = (e) => {
+    let cursorX = e.clientX,
+      cursorY = e.clientY;
+
+    if (locator(e, cat_carasoul)) {
+      cursorInner.style.width = "25px";
+      cursorInner.style.height = "25px";
+    } else if (locator(e, expertise)) {
+      cursorInner.style.width = "200px";
+      cursorInner.style.height = "200px";
+    } else if (locator(e, nameHero)) {
+      cursorInner.style.width = "200px";
+      cursorInner.style.height = "200px";
     } else {
-      opacitor(work, false);
+      if (locator(e, work)) {
+        opacitor(work, true);
+      } else {
+        opacitor(work, false);
+      }
+
+      if (locator(e, asthetic)) {
+        opacitor(asthetic, true);
+      } else {
+        opacitor(asthetic, false);
+      }
+      if (locator(e, contact)) {
+        opacitor(contact, true);
+      } else {
+        opacitor(contact, false);
+      }
     }
 
-    if (locator(e, asthetic)) {
-      opacitor(asthetic, true);
+    if (cursorY + window.scrollY < 60) {
+      cursorInner.classList.add("cursor-link-hover");
     } else {
-      opacitor(asthetic, false);
+      cursorInner.classList.remove("cursor-link-hover");
     }
-    if (locator(e, contact)) {
-      opacitor(contact, true);
-    } else {
-      opacitor(contact, false);
-    }
-  }
 
-  if (cursorY + window.scrollY < 60) {
-    cursorInner.classList.add("cursor-link-hover");
-  } else {
-    cursorInner.classList.remove("cursor-link-hover");
-  }
+    cursorOuter.style.animationTimingFunction = "cubic-bezier(0, .9, .1, 1)";
+    cursorInner.style.animationTimingFunction = "cubic-bezier(0, .9, .1, 1)";
+    cursorOuter.animate(
+      {
+        transform: `translate(${cursorX - 16}px,${cursorY - 16}px)`,
+      },
+      {
+        duration: 1000,
+        fill: "forwards",
+      }
+    );
+    cursorInner.animate(
+      {
+        transform: `translate(${cursorX - cursorInner.offsetWidth / 2}px,${
+          cursorY - cursorInner.offsetHeight / 2
+        }px)`,
+      },
+      {
+        duration: 500,
+        fill: "forwards",
+      }
+    );
+  });
 
-  cursorOuter.style.animationTimingFunction = "cubic-bezier(0, .9, .1, 1)";
-  cursorInner.style.animationTimingFunction = "cubic-bezier(0, .9, .1, 1)";
-  cursorOuter.animate(
-    {
-      transform: `translate(${cursorX - 16}px,${cursorY - 16}px)`,
-    },
-    {
-      duration: 1000,
-      fill: "forwards",
-    }
-  );
-  cursorInner.animate(
-    {
-      transform: `translate(${cursorX - cursorInner.offsetWidth / 2}px,${
-        cursorY - cursorInner.offsetHeight / 2
-      }px)`,
-    },
-    {
-      duration: 500,
-      fill: "forwards",
-    }
-  );
-};
-
+mouse_trail();
 let mouseOver = false;
-wrapper.onmouseover = async (e) => {
+cypherWrapper.onmouseover = async (e) => {
   if (mouseOver) return;
 
   mouseOver = true;
@@ -138,4 +146,47 @@ wrapper.onmouseover = async (e) => {
     }
     iterations += 1;
   }, 50);
+};
+
+cat_carasoul.onmousedown = (e) => {
+  wrapper.dataset.mouseDownAt = e.clientX;
+
+  cat_carasoul.onmousemove = (e) => {
+    if (wrapper.dataset.mouseDownAt === "0") return;
+
+    const mouseDelta = parseFloat(wrapper.dataset.mouseDownAt) - e.clientX,
+      maxDelta = window.innerWidth / 2;
+    const unper =
+      (mouseDelta / maxDelta) * -100 +
+      parseFloat(wrapper.dataset.prevPercentage);
+
+    const per = Math.max(Math.min(unper, 50), -100);
+    wrapper.dataset.percentage = per;
+    wrapper.animate(
+      {
+        transform: `translate(${per}%, 50%)`,
+      },
+      {
+        duration: 1200,
+        fill: "forwards",
+      }
+    );
+
+    const imgPer = ((per + 100) / 150) * 100;
+    for (const image of wrapper.getElementsByClassName("slide")) {
+      image.animate(
+        {
+          objectPosition: `${Math.max(Math.min(imgPer, 100), 0)}% center`,
+        },
+        {
+          duration: 1200,
+          fill: "forwards",
+        }
+      );
+    }
+  };
+  cat_carasoul.onmouseup = () => {
+    wrapper.dataset.mouseDownAt = "0";
+    wrapper.dataset.prevPercentage = wrapper.dataset.percentage;
+  };
 };
