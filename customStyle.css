@@ -1,0 +1,70 @@
+html {
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+html::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+.cursor-link-hover {
+  width: 25px;
+  height: 25px;
+  transform: translate(-50%);
+}
+
+.linkList:hover .link {
+  opacity: 0.5;
+}
+
+.linkList .link:hover {
+  opacity: 1;
+}
+
+#logo:hover > span.dot {
+  opacity: 1;
+  color: orange;
+}
+
+#logo:hover > span {
+  opacity: 0.5;
+}
+
+.animated:hover .scroll-text {
+  animation: floatText 4s infinite linear;
+}
+
+.scroll-text {
+  animation-play-state: paused;
+}
+
+.scroll-text-head {
+  animation: floatText 8s infinite linear;
+}
+
+#bigdiv1:hover .scroll-text-head {
+  animation-play-state: paused;
+  opacity: 0;
+}
+#bigdiv1:hover .circleC {
+  color: #a9def9;
+  opacity: 1;
+}
+#bigdiv1:hover .circleH {
+  color: #ff99c8;
+  opacity: 1;
+}
+#bigdiv1:hover .circleJ {
+  color: #fcf6bd;
+  opacity: 1;
+}
+.circleH,
+.circleC,
+.circleJ {
+  color: white;
+  fill: currentColor;
+}
+
+@keyframes floatText {
+  to {
+    transform: translateX(-100%);
+  }
+}
