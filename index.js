@@ -6,6 +6,9 @@ const nameHero = document.getElementById("home");
 const work = document.getElementById("work");
 const asthetic = document.getElementById("asthetic");
 const contact = document.getElementById("contact");
+const expertise = document.getElementById("expertise");
+const wrapper = document.getElementById("wrapper");
+const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 const scrollTextAnimate = () => {
   let posX = 0;
@@ -54,11 +57,13 @@ const opacitor = (element, bool) => {
   }
 };
 window.onmousemove = (e) => {
-  console.log(locator(e, work));
   let cursorX = e.clientX,
     cursorY = e.clientY;
 
-  if (locator(e, nameHero)) {
+  if (locator(e, expertise)) {
+    cursorInner.style.width = "200px";
+    cursorInner.style.height = "200px";
+  } else if (locator(e, nameHero)) {
     cursorInner.style.width = "200px";
     cursorInner.style.height = "200px";
   } else {
@@ -108,4 +113,29 @@ window.onmousemove = (e) => {
       fill: "forwards",
     }
   );
+};
+
+let mouseOver = false;
+wrapper.onmouseover = async (e) => {
+  if (mouseOver) return;
+
+  mouseOver = true;
+  console.log("GOT IT");
+  const text = e.target.innerText;
+  console.log(text);
+  let iterations = 0;
+  const interval = setInterval(() => {
+    e.target.innerText = e.target.innerText
+      .split("")
+      .map((letter, index) => {
+        if (index < iterations) return text[index];
+        return letters[Math.floor(Math.random() * 26)];
+      })
+      .join("");
+    if (text.length <= iterations) {
+      mouseOver = false;
+      clearInterval(interval);
+    }
+    iterations += 1;
+  }, 50);
 };

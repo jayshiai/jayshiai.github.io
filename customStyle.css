@@ -58,7 +58,8 @@ html::-webkit-scrollbar {
 }
 .circleH,
 .circleC,
-.circleJ {
+.circleJ,
+.skill-icon {
   color: white;
   fill: currentColor;
 }
@@ -67,4 +68,31 @@ html::-webkit-scrollbar {
   to {
     transform: translateX(-100%);
   }
+}
+
+.skill-body::before,
+.skill-body::after {
+  content: "<h2>";
+  display: block;
+  opacity: 0.3;
+  margin-left: -35px;
+}
+
+.skill-body::before {
+  margin-bottom: 5px;
+}
+.skill-body::after {
+  margin-top: 5px;
+}
+
+.skill-line::after {
+  opacity: 0.3;
+  content: "";
+  width: 0;
+  height: 35%;
+  background-color: white;
+  border: 0.1px solid white;
+  position: absolute;
+  bottom: 75px;
+  left: 50px;
 }
