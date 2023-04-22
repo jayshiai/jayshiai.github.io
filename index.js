@@ -105,7 +105,7 @@ const mouse_trail = () =>
         transform: `translate(${cursorX - 16}px,${cursorY - 16}px)`,
       },
       {
-        duration: 1000,
+        duration: 2000,
         fill: "forwards",
       }
     );
@@ -116,7 +116,7 @@ const mouse_trail = () =>
         }px)`,
       },
       {
-        duration: 500,
+        duration: 1000,
         fill: "forwards",
       }
     );

@@ -12,7 +12,7 @@
       rel="stylesheet"
     />
   </head>
-  <body class="overflow-x-hidden bg-black">
+  <body class="overflow-x-hidden bg-[#1a191d]">
     <div class="w-[100vw]">
       <div
         id="nav"
@@ -66,11 +66,9 @@
           A FRONTEND DEVELOPER & AI ENTHUSIAST
         </div>
       </div>
-      <div
-        id="fancy_nav"
-        class="grid h-[70vh] w-[100vw] bg-black lg:grid-cols-2"
-      >
-        <div
+      <div id="fancy_nav" class="grid h-[70vh] w-[100vw] lg:grid-cols-2">
+        <a
+          href="#skill_wrapper"
           id="bigdiv1"
           class="relative m-1 flex min-h-[400px] items-center overflow-hidden rounded-3xl bg-[#2900e8] text-white lg:rounded-[80px]"
         >
@@ -270,20 +268,80 @@ l-169 -100 -186 90 c-208 100 -416 186 -626 258 -77 26 -141 48 -142 49 -1 0
               </h1>
             </div>
           </div>
-        </div>
+        </a>
         <div id="bigdiv2" class="grid grid-rows-2">
           <div class="grid grid-cols-2">
             <div
               id="work"
               class="relative m-1 min-h-[175px] w-[95%] overflow-hidden rounded-3xl bg-white text-black lg:rounded-[80px]"
             >
+              <a href="#work_wrapper">
+                <div class="content absolute h-[100%] w-[100%] opacity-100">
+                  <div class="top h-[80%]"></div>
+                  <div
+                    class="bottom m-auto flex w-[80%] justify-between font-roboto text-xl"
+                  >
+                    <div>Work</div>
+                    <div><span class="material-icons">terminal</span></div>
+                  </div>
+                </div>
+                <div
+                  class="animated absolute flex h-[100%] items-center opacity-0"
+                >
+                  <div class="flex overflow-hidden whitespace-nowrap text-2xl">
+                    <h1 class="scroll-text pr-5 text-7xl font-bold">
+                      View my showcase.
+                    </h1>
+                    <h1 class="scroll-text pr-5 text-7xl font-bold">
+                      View my showcase.
+                    </h1>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div
+              id="asthetic"
+              class="relative m-1 w-[95%] overflow-hidden rounded-3xl bg-black lg:rounded-[80px]"
+            >
+              <a href="#cat_carasoul">
+                <div
+                  class="content absolute h-[100%] w-[100%] text-white opacity-100"
+                >
+                  <div class="top h-[80%]"></div>
+                  <div
+                    class="bottom m-auto flex w-[80%] justify-between font-roboto text-xl"
+                  >
+                    <div>Aesthetic</div>
+                    <div><span class="material-icons">business</span></div>
+                  </div>
+                </div>
+                <div
+                  class="animated absolute flex h-[100%] items-center text-white opacity-0"
+                >
+                  <div class="flex overflow-hidden whitespace-nowrap text-2xl">
+                    <h1 class="scroll-text pr-5 text-7xl font-bold">
+                      Just here to fill space.
+                    </h1>
+                    <h1 class="scroll-text pr-5 text-7xl font-bold">
+                      Just here to fill space.
+                    </h1>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div
+            id="contact"
+            class="relative m-1 w-[98%] rounded-3xl bg-[#FFF480] text-black lg:rounded-[80px]"
+          >
+            <a href="#contact_wrapper">
               <div class="content absolute h-[100%] w-[100%] opacity-100">
                 <div class="top h-[80%]"></div>
                 <div
-                  class="bottom m-auto flex w-[80%] justify-between font-roboto text-xl"
+                  class="bottom m-auto flex w-[90%] justify-between font-roboto text-xl"
                 >
-                  <div>Work</div>
-                  <div><span class="material-icons">terminal</span></div>
+                  <div>Contact</div>
+                  <div><span class="material-icons">send</span></div>
                 </div>
               </div>
               <div
@@ -291,66 +349,14 @@ l-169 -100 -186 90 c-208 100 -416 186 -626 258 -77 26 -141 48 -142 49 -1 0
               >
                 <div class="flex overflow-hidden whitespace-nowrap text-2xl">
                   <h1 class="scroll-text pr-5 text-7xl font-bold">
-                    View my showcase.
+                    Let's talk business. Get in touch.
                   </h1>
                   <h1 class="scroll-text pr-5 text-7xl font-bold">
-                    View my showcase.
+                    Let's talk business. Get in touch.
                   </h1>
                 </div>
               </div>
-            </div>
-            <div
-              id="asthetic"
-              class="relative m-1 w-[95%] overflow-hidden rounded-3xl bg-[#1B1B1F] lg:rounded-[80px]"
-            >
-              <div
-                class="content absolute h-[100%] w-[100%] text-white opacity-100"
-              >
-                <div class="top h-[80%]"></div>
-                <div
-                  class="bottom m-auto flex w-[80%] justify-between font-roboto text-xl"
-                >
-                  <div>Aesthetic</div>
-                  <div><span class="material-icons">business</span></div>
-                </div>
-              </div>
-              <div
-                class="animated absolute flex h-[100%] items-center text-white opacity-0"
-              >
-                <div class="flex overflow-hidden whitespace-nowrap text-2xl">
-                  <h1 class="scroll-text pr-5 text-7xl font-bold">
-                    Just here to fill space.
-                  </h1>
-                  <h1 class="scroll-text pr-5 text-7xl font-bold">
-                    Just here to fill space.
-                  </h1>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            id="contact"
-            class="relative m-1 w-[98%] rounded-3xl bg-[#FFF480] text-black lg:rounded-[80px]"
-          >
-            <div class="content absolute h-[100%] w-[100%] opacity-100">
-              <div class="top h-[80%]"></div>
-              <div
-                class="bottom m-auto flex w-[90%] justify-between font-roboto text-xl"
-              >
-                <div>Contact</div>
-                <div><span class="material-icons">send</span></div>
-              </div>
-            </div>
-            <div class="animated absolute flex h-[100%] items-center opacity-0">
-              <div class="flex overflow-hidden whitespace-nowrap text-2xl">
-                <h1 class="scroll-text pr-5 text-7xl font-bold">
-                  Let's talk business. Get in touch.
-                </h1>
-                <h1 class="scroll-text pr-5 text-7xl font-bold">
-                  Let's talk business. Get in touch.
-                </h1>
-              </div>
-            </div>
+            </a>
           </div>
         </div>
       </div>
@@ -358,7 +364,7 @@ l-169 -100 -186 90 c-208 100 -416 186 -626 258 -77 26 -141 48 -142 49 -1 0
     <div id="expertise_wrapper">
       <div
         id="expertise"
-        class="m-1 h-[50vh] translate-y-[200px] rounded-[75px] bg-[#1B1B1F] text-white lg:h-[80vh] lg:translate-y-0"
+        class="m-1 h-[50vh] translate-y-[200px] rounded-[75px] bg-black text-white lg:h-[80vh] lg:translate-y-0"
       >
         <div class="top h-[10%] p-[10%] text-sm md:text-2xl lg:p-[5%]">
           What I can do
@@ -367,6 +373,7 @@ l-169 -100 -186 90 c-208 100 -416 186 -626 258 -77 26 -141 48 -142 49 -1 0
           I provide clients<br />
           with stunningly Crafted websites, <br />developed <br />with skill and
           passion.
+          <span class="text-black">Hi, hidden text</span>
         </div>
         <div
           class="wheel m-auto flex w-[90%] origin-bottom-right items-center justify-end"
@@ -502,6 +509,7 @@ l-169 -100 -186 90 c-208 100 -416 186 -626 258 -77 26 -141 48 -142 49 -1 0
     </div>
 
     <div
+      id="work_wrapper"
       class="work_wrapper m-auto mt-[100px] hidden max-w-[1500px] items-center justify-around lg:flex"
     >
       <div class="flex h-[500px] items-center text-9xl text-white">
@@ -603,14 +611,14 @@ l-169 -100 -186 90 c-208 100 -416 186 -626 258 -77 26 -141 48 -142 49 -1 0
         </div>
       </div>
     </div>
-    <div id="contact">
-      <div class="flex h-[90vh] w-screen flex-col lg:flex-row">
-        <div class="w-[100%] font-roboto font-bold lg:w-[45%]">
-          <div class="text-4xl text-white md:text-6xl lg:text-8xl">
+    <div id="contact_wrapper">
+      <div class="flex w-screen">
+        <div class="w-[100%] font-roboto font-bold xl:w-[45%]">
+          <div class="text-4xl text-white md:text-6xl xl:text-8xl">
             I'm always interested about cool stuff.<br />
             Are you <br />minding a project?
           </div>
-          <div class="text-7xl text-red-500 md:text-8xl lg:text-9xl">
+          <div class="text-4xl text-red-500 md:text-6xl xl:text-9xl">
             Let's Talk
           </div>
           <div
@@ -630,112 +638,93 @@ l-169 -100 -186 90 c-208 100 -416 186 -626 258 -77 26 -141 48 -142 49 -1 0
             </div>
           </div>
         </div>
-        <div class="col-as-row flex">
-          <div class="w-[50%] bg-[#bc60fb] lg:w-[25%]">
+        <div class="hidden w-[25%] bg-[#bc60fb] xl:block">
+          <div
+            class="quote-header m-auto flex h-[20%] w-[80%] items-center justify-between"
+          >
+            <div class="quotes">
+              <img src="quote-icon.webp" alt="quotes" class="opacity-[0.5]" />
+            </div>
+            <div class="pic h-[100px] w-[100px] rounded-full bg-white">
+              <img src="./jay.jpg" alt="Jay" class="object-cover" />
+            </div>
+          </div>
+          <div class="quote-body m-auto w-[80%] font-roboto text-lg text-white">
+            Since I'm new to this, there's no one to vouch for me. So I'll just
+            do it myself.<br />
+            I've always had a strange pull towards computers and anything
+            related to them. This is what drove me in my youth to pick up
+            programming. And it has been a trully fulfilling experience. The
+            ability to create almost anything that I can imagine boggles my
+            mind. Being able to do something I love as a livelihood, fills me
+            with immense joy and energy. I strive to bring same enery to the
+            table, when working with various teams and clients. Hire me and you
+            won't be disappointed. <br />
+            And if you leave a review, I can finally remove mine. :D
+          </div>
+          <div
+            class="quote-footer m-auto h-[30%] w-[80%] font-roboto text-xl text-white"
+          >
+            -Myself, Jay
+          </div>
+        </div>
+        <div class="hidden w-[30%] xl:block">
+          <div class="h-[50%] bg-[#0067dc]">
             <div
-              class="quote-header m-auto flex h-[10%] w-[80%] items-center justify-between md:h-[20%]"
+              class="quote-header m-auto flex h-[150px] w-[80%] items-center justify-between"
             >
               <div class="quotes">
-                <img
-                  src="quote-icon.webp"
-                  alt="quotes"
-                  class="scale-75 opacity-[0.5]"
-                />
+                <img src="quote-icon.webp" alt="quotes" class="opacity-[0.5]" />
               </div>
-              <div
-                class="pic h-[75px] w-[75px] rounded-full bg-white md:h-[100px] md:w-[100px]"
-              >
-                <img src="./jay.jpg" alt="Jay" class="object-cover" />
+              <div class="pic h-[100px] w-[100px] rounded-full bg-white">
+                <img src="./manu.jpg" alt="A very beautiful cat" />
               </div>
             </div>
             <div
               class="quote-body m-auto w-[80%] font-roboto text-lg text-white"
             >
-              Since I'm new to this, there's no one to vouch for me. So I'll
-              just do it myself.<br />
-              I've always had a strange pull towards computers and anything
-              related to them. This is what drove me in my youth to pick up
-              programming. And it has been a trully fulfilling experience. The
-              ability to create almost anything that I can imagine boggles my
-              mind. Being able to do something I love as a livelihood, fills me
-              with immense joy and energy. I strive to bring same enery to the
-              table, when working with various teams and clients. Hire me and
-              you won't be disappointed. <br />
-              And if you leave a review, I can finally remove mine. :D
+              This human is acceptable. Although this creature is still
+              incapable of serving me properly, I say he's resonable capable.
+              Meow.
             </div>
             <div
-              class="quote-footer m-auto h-[15%] w-[80%] font-roboto text-xl text-white md:h-[30%]"
+              class="quote-footer m-auto h-[30%] w-[80%] font-roboto text-xl text-white"
             >
-              -Myself, Jay
+              -My Cat, Manu
             </div>
           </div>
-          <div class="w-[50%] lg:w-[30%]">
-            <div class="h-[50%] bg-[#0067dc]">
-              <div
-                class="quote-header m-auto flex h-[150px] w-[80%] items-center justify-between"
-              >
-                <div class="quotes">
-                  <img
-                    src="quote-icon.webp"
-                    alt="quotes"
-                    class="opacity-[0.5]"
-                  />
-                </div>
-                <div class="pic h-[100px] w-[100px] rounded-full bg-white">
-                  <img src="./manu.jpg" alt="A very beautiful cat" />
-                </div>
+          <div class="h-[50%] bg-[#923fe6]">
+            <div
+              class="quote-header m-auto flex h-[150px] w-[80%] items-center justify-between"
+            >
+              <div class="quotes">
+                <img src="quote-icon.webp" alt="quotes" class="opacity-[0.5]" />
               </div>
-              <div
-                class="quote-body m-auto w-[80%] font-roboto text-lg text-white"
-              >
-                This human is acceptable. Although this creature is still
-                incapable of serving me properly, I say he's resonable capable.
-                Meow.
-              </div>
-              <div
-                class="quote-footer m-auto h-[30%] w-[80%] font-roboto text-xl text-white"
-              >
-                -My Cat, Manu
+              <div class="pic h-[100px] w-[100px] rounded-full bg-white">
+                <img src="" alt="" />
               </div>
             </div>
-            <div class="h-[50%] bg-[#923fe6]">
-              <div
-                class="quote-header m-auto flex h-[150px] w-[80%] items-center justify-between"
-              >
-                <div class="quotes">
-                  <img
-                    src="quote-icon.webp"
-                    alt="quotes"
-                    class="opacity-[0.5]"
-                  />
-                </div>
-                <div class="pic h-[100px] w-[100px] rounded-full bg-white">
-                  <img src="" alt="" />
-                </div>
-              </div>
-              <div
-                class="quote-body m-auto w-[80%] font-roboto text-lg text-white"
-              >
-                Very capable. Must hire. Would recommend. A gentleman.
-              </div>
-              <div
-                class="quote-footer m-auto h-[30%] w-[80%] font-roboto text-xl text-white"
-              >
-                -An Anonymous lady whom I refer to as mother.
-              </div>
+            <div
+              class="quote-body m-auto w-[80%] font-roboto text-lg text-white"
+            >
+              Very capable. Must hire. Would recommend. A gentleman.
+            </div>
+            <div
+              class="quote-footer m-auto h-[30%] w-[80%] font-roboto text-xl text-white"
+            >
+              -An Anonymous lady whom I refer to as mother.
             </div>
           </div>
         </div>
       </div>
     </div>
-
     <div
       id="circle-cursor--outer"
-      class="circle-cursor pointer-events-none fixed left-0 top-0 h-8 w-8 rounded-full border-2 border-teal-400 opacity-70 mix-blend-exclusion"
+      class="circle-cursor pointer-events-none fixed left-0 top-0 h-8 w-8 rounded-full border-2 border-teal-400 opacity-70 mix-blend-difference"
     ></div>
     <div
       id="circle-cursor--inner"
-      class="circle-cursor pointer-events-none fixed left-0 top-0 h-1.5 w-1.5 rounded-full bg-teal-400 opacity-70 mix-blend-exclusion"
+      class="circle-cursor pointer-events-none fixed left-0 top-0 h-1.5 w-1.5 rounded-full bg-teal-400 opacity-70 mix-blend-difference"
     ></div>
     <script src="index.js"></script>
   </body>
