@@ -712,6 +712,10 @@ video {
   height: 100vh;
 }
 
+.h-\[60h\] {
+  height: 60h;
+}
+
 .min-h-\[1000px\] {
   min-height: 1000px;
 }
@@ -738,6 +742,14 @@ video {
 
 .min-h-\[500px\] {
   min-height: 500px;
+}
+
+.min-h-\[60vmin\] {
+  min-height: 60vmin;
+}
+
+.min-h-\[60h\] {
+  min-height: 60h;
 }
 
 .w-1 {
