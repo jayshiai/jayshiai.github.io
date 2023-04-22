@@ -148,45 +148,57 @@ cypherWrapper.onmouseover = async (e) => {
   }, 50);
 };
 
-cat_carasoul.onmousedown = (e) => {
-  wrapper.dataset.mouseDownAt = e.clientX;
+const handleOnDown = (e) => (wrapper.dataset.mouseDownAt = e.clientX);
 
-  cat_carasoul.onmousemove = (e) => {
-    if (wrapper.dataset.mouseDownAt === "0") return;
+const handleOnUp = () => {
+  wrapper.dataset.mouseDownAt = "0";
+  wrapper.dataset.prevPercentage = wrapper.dataset.percentage;
+};
 
-    const mouseDelta = parseFloat(wrapper.dataset.mouseDownAt) - e.clientX,
-      maxDelta = window.innerWidth / 2;
-    const unper =
-      (mouseDelta / maxDelta) * -100 +
-      parseFloat(wrapper.dataset.prevPercentage);
+const handleOnMove = (e) => {
+  if (wrapper.dataset.mouseDownAt === "0") return;
 
-    const per = Math.max(Math.min(unper, 50), -100);
-    wrapper.dataset.percentage = per;
-    wrapper.animate(
+  const mouseDelta = parseFloat(wrapper.dataset.mouseDownAt) - e.clientX,
+    maxDelta = window.innerWidth / 2;
+  const unper =
+    (mouseDelta / maxDelta) * -100 + parseFloat(wrapper.dataset.prevPercentage);
+
+  const per = Math.max(Math.min(unper, 50), -100);
+  wrapper.dataset.percentage = per;
+  wrapper.animate(
+    {
+      transform: `translate(${per}%, 50%)`,
+    },
+    {
+      duration: 1200,
+      fill: "forwards",
+    }
+  );
+
+  const imgPer = ((per + 100) / 150) * 100;
+  for (const image of wrapper.getElementsByClassName("slide")) {
+    image.animate(
       {
-        transform: `translate(${per}%, 50%)`,
+        objectPosition: `${Math.max(Math.min(imgPer, 100), 0)}% center`,
       },
       {
         duration: 1200,
         fill: "forwards",
       }
     );
-
-    const imgPer = ((per + 100) / 150) * 100;
-    for (const image of wrapper.getElementsByClassName("slide")) {
-      image.animate(
-        {
-          objectPosition: `${Math.max(Math.min(imgPer, 100), 0)}% center`,
-        },
-        {
-          duration: 1200,
-          fill: "forwards",
-        }
-      );
-    }
-  };
-  cat_carasoul.onmouseup = () => {
-    wrapper.dataset.mouseDownAt = "0";
-    wrapper.dataset.prevPercentage = wrapper.dataset.percentage;
-  };
+  }
 };
+
+/* -- Had to add extra lines for touch events -- */
+
+cat_carasoul.onmousedown = (e) => handleOnDown(e);
+
+cat_carasoul.ontouchstart = (e) => handleOnDown(e.touches[0]);
+
+cat_carasoul.onmouseup = (e) => handleOnUp(e);
+
+cat_carasoul.ontouchend = (e) => handleOnUp(e.touches[0]);
+
+cat_carasoul.onmousemove = (e) => handleOnMove(e);
+
+cat_carasoul.ontouchmove = (e) => handleOnMove(e.touches[0]);
