@@ -1349,6 +1349,11 @@ video {
     font-size: 3.75rem;
     line-height: 1;
   }
+
+  .sm\:text-5xl {
+    font-size: 3rem;
+    line-height: 1;
+  }
 }
 
 @media (min-width: 768px) {
