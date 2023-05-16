@@ -15,7 +15,7 @@
   </head>
   <body>
     <div class="w-screen overflow-x-hidden">
-      <div class="mb-20 mt-20 lg:flex">
+      <div class="mb-20 mt-20 rounded-3xl shadow-2xl lg:flex">
         <div class="m-auto w-[75vw] text-center text-xl">
           <p class="m-5">
             Chez Essentiel Protect, notre priorité est de prendre soin de votre
@@ -56,7 +56,7 @@
       </div>
       <div class="m-auto h-1 w-[40vw] min-w-[450px] bg-[#9b1e5f]"></div>
       <div
-        class="mb-20 mt-20 bg-[url('./res/bg.png')] bg-cover bg-no-repeat lg:flex"
+        class="mb-20 mt-20 w-[90vw] rounded-3xl bg-[url('./res/bg.png')] bg-cover bg-no-repeat shadow-2xl lg:flex"
       >
         <div
           class="flex self-center transition-all duration-700 hover:scale-110"
@@ -99,49 +99,46 @@
       </div>
       <div class="m-auto h-1 w-[40vw] min-w-[450px] bg-[#9b1e5f]"></div>
       <div class="mb-20 mt-20 flex flex-wrap justify-center gap-10">
-        <div>
+        <div id="image-track" data-mouse-down-at="0" data-prev-percentage="0">
           <img
             src="./res/girls.png"
             alt="girls"
-            class="m-auto transition-all duration-700 hover:scale-110"
+            class="image"
+            draggable="false"
           />
-        </div>
-        <div>
           <img
             src="./res/girls.png"
             alt="girls"
-            class="m-auto transition-all duration-700 hover:scale-110"
+            class="image"
+            draggable="false"
           />
-        </div>
-        <div>
           <img
             src="./res/girls.png"
             alt="girls"
-            class="m-auto transition-all duration-700 hover:scale-110"
+            class="image"
+            draggable="false"
           />
-        </div>
-        <div>
           <img
             src="./res/girls.png"
             alt="girls"
-            class="m-auto transition-all duration-700 hover:scale-110"
+            class="image"
+            draggable="false"
           />
-        </div>
-        <div>
           <img
             src="./res/girls.png"
             alt="girls"
-            class="m-auto transition-all duration-700 hover:scale-110"
+            class="image"
+            draggable="false"
           />
-        </div>
-        <div>
           <img
             src="./res/girls.png"
             alt="girls"
-            class="m-auto transition-all duration-700 hover:scale-110"
+            class="image"
+            draggable="false"
           />
         </div>
       </div>
     </div>
+    <script src="./medifi.js"></script>
   </body>
 </html>
