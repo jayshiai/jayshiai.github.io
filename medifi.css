@@ -722,6 +722,12 @@ video {
   scroll-padding: 1rem;
   scroll-behavior: smooth;
   user-select: none;
+  -ms-overflow-style: none; /* for Internet Explorer, Edge */
+  scrollbar-width: none; /* for Firefox */
+  overflow-y: scroll;
+}
+.gallery::-webkit-scrollbar {
+  display: none; /* for Chrome, Safari, and Opera */
 }
 
 .active {
